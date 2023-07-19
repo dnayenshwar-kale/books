@@ -15,8 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ltim.books.entity.Book;
 import com.ltim.books.service.BookService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @RequestMapping("/api/book")
+@Slf4j
 public class BookController {
     private final BookService bookService;
 
@@ -26,7 +29,9 @@ public class BookController {
 
     @GetMapping("")
     public List<Book> getAllBooks() {
+    	log.info("getting all books");
         return bookService.getAllBooks();
+       
     }
 
     @GetMapping("/{id}")
