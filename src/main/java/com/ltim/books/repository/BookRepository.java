@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import com.ltim.books.entity.Book;
 
-//@Repository
-public interface BookRepository extends JpaRepository<Book, Long> {}
+@Repository
+public interface BookRepository extends JpaRepository<Book, Long> {
+	// use customer query
+}
 

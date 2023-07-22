@@ -17,6 +17,7 @@ public class BookService {
 	}
 
 	public List<Book> getAllBooks() {
+		//implement pagination and sorting  
 		return bookRepository.findAll();
 	}
 
