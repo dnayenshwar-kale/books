@@ -1,10 +1,10 @@
 version: 0.2
 env:
   secrets-manager:
-    LOGIN: prod/sonar:a192c39382d9f21f8ace68235dea6ea07c0e9070
-    HOST: prod/sonar:https://sonarcloud.io
-    Organization: prod/sonar:dnayenshwar-kale
-    Project: prod/sonar:Project
+    LOGIN: a192c39382d9f21f8ace68235dea6ea07c0e9070
+    HOST: https://sonarcloud.io
+    Organization: dnayenshwar-kale
+    Project: dnayenshwar-kale_books
 phases:
   install:
     runtime-versions:
