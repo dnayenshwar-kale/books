@@ -3,8 +3,10 @@ package com.ltim.books.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -50,9 +52,22 @@ public class BookController {
 
     @PutMapping(value="/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> updateBook(@PathVariable Long id, @RequestBody Book book) {
+    public ResponseEntity<String> updateBook(@PathVariable Long id, @RequestBody Book book) {
         bookService.updateBook(id, book);
-        return ResponseEntity.noContent().build();
+        return new ResponseEntity<String>("book updated for book id "+id,HttpStatus.OK);
     }
+    
+    @DeleteMapping(value="/{id}",
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> deleteBook(@PathVariable Long id) {
+    	Optional<Book> optionalBook = bookService.getBookById(id);
+        if (optionalBook.isPresent()) {
+        	 bookService.deleteBook(id);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+        return new ResponseEntity<String>("book deleted for book id "+id,HttpStatus.OK);
+    }
+	
 	
 }
