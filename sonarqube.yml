@@ -1,6 +1,6 @@
 version: 0.2
 env:
-  secrets-manager:
+   parameter-store:
     LOGIN: a192c39382d9f21f8ace68235dea6ea07c0e9070
     HOST: https://sonarcloud.io
     Organization: dnayenshwar-kale
