@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   parameter-store:
-    SONARQUBE_TOKEN: "SonarQubeToken"
-    SONARQUBE_ENDPOINT: "SonarQubeEndpoint"
+    SONARQUBE_TOKEN: "a192c39382d9f21f8ace68235dea6ea07c0e9070"
+    SONARQUBE_ENDPOINT: "https://sonarcloud.io/project/configuration?id=dnayenshwar-kale_books"
 
 phases:
   install:
