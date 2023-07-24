@@ -3,6 +3,7 @@ package com.ltim.books.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,12 +25,14 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @GetMapping("")
+    @GetMapping(value="/", consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value="/{id}", consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Book> getBookById(@PathVariable Long id) {
         Optional<Book> optionalBook = bookService.getBookById(id);
         if (optionalBook.isPresent()) {
@@ -39,15 +42,17 @@ public class BookController {
         }
     }
 
-    @PostMapping("")
+    @PostMapping(value="", consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Book> createBook(@RequestBody Book book) {
         return ResponseEntity.ok(bookService.createBook(book));
     }
 
-    @PutMapping("/{id}")
+    @PutMapping(value="/{id}", consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> updateBook(@PathVariable Long id, @RequestBody Book book) {
         bookService.updateBook(id, book);
         return ResponseEntity.noContent().build();
     }
-	
+    
 }
