@@ -25,13 +25,13 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @GetMapping(value="/", consumes = MediaType.APPLICATION_JSON_VALUE,
+    @GetMapping(value="",
             produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
 
-    @GetMapping(value="/{id}", consumes = MediaType.APPLICATION_JSON_VALUE,
+    @GetMapping(value="/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Book> getBookById(@PathVariable Long id) {
         Optional<Book> optionalBook = bookService.getBookById(id);
@@ -42,17 +42,17 @@ public class BookController {
         }
     }
 
-    @PostMapping(value="", consumes = MediaType.APPLICATION_JSON_VALUE,
+    @PostMapping(value="",
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Book> createBook(@RequestBody Book book) {
         return ResponseEntity.ok(bookService.createBook(book));
     }
 
-    @PutMapping(value="/{id}", consumes = MediaType.APPLICATION_JSON_VALUE,
+    @PutMapping(value="/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> updateBook(@PathVariable Long id, @RequestBody Book book) {
         bookService.updateBook(id, book);
         return ResponseEntity.noContent().build();
     }
-    
+	
 }
