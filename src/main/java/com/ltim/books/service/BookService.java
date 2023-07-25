@@ -12,6 +12,7 @@ import com.ltim.books.repository.BookRepository;
 public class BookService {
 	private final BookRepository bookRepository;
 
+	
 	public BookService(BookRepository bookRepository) {
 		this.bookRepository = bookRepository;
 	}
@@ -29,14 +30,16 @@ public class BookService {
 		return bookRepository.save(book);
 	}
 
-	public void updateBook(Long id, Book book) {
+	public Book updateBook(Long id, Book book) {
 		Optional<Book> optionalBook = bookRepository.findById(id);
+		Book updatedBook=new Book();
 		if (optionalBook.isPresent()) {
 			Book existingBook = optionalBook.get();
 			existingBook.setTitle(book.getTitle());
 			existingBook.setAuthor(book.getAuthor());
-			bookRepository.save(existingBook);
+			updatedBook=bookRepository.save(existingBook);
 		}
+	return updatedBook;
 	}
 
 	public void deleteBook(Long id) {		

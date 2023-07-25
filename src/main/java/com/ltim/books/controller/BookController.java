@@ -3,9 +3,7 @@ package com.ltim.books.controller;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,38 +33,37 @@ public class BookController {
 
     @GetMapping(value="/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Book> getBookById(@PathVariable Long id) {
+    public Book getBookById(@PathVariable Long id) {
         Optional<Book> optionalBook = bookService.getBookById(id);
         if (optionalBook.isPresent()) {
-            return ResponseEntity.ok(optionalBook.get());
+            return optionalBook.get();
         } else {
-            return ResponseEntity.notFound().build();
+            return new Book();
         }
     }
 
     @PostMapping(value="",
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Book> createBook(@RequestBody Book book) {
-        return ResponseEntity.ok(bookService.createBook(book));
+    public Book createBook(@RequestBody Book book) {
+        return bookService.createBook(book);
     }
 
     @PutMapping(value="/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> updateBook(@PathVariable Long id, @RequestBody Book book) {
-        bookService.updateBook(id, book);
-        return new ResponseEntity<String>("book updated for book id "+id,HttpStatus.OK);
+    public Book updateBook(@PathVariable Long id, @RequestBody Book book) {
+        return bookService.updateBook(id, book);
     }
     
     @DeleteMapping(value="/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> deleteBook(@PathVariable Long id) {
+    public String deleteBook(@PathVariable Long id) {
     	Optional<Book> optionalBook = bookService.getBookById(id);
         if (optionalBook.isPresent()) {
         	 bookService.deleteBook(id);
         } else {
-            return ResponseEntity.notFound().build();
+            return "book not present with id "+id;
         }
-        return new ResponseEntity<String>("book deleted for book id "+id,HttpStatus.OK);
+        return "book deleted for book id "+id;
     }
 	
 	
