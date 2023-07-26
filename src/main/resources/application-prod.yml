@@ -1,9 +1,10 @@
 spring:
   datasource:
-    url: jdbc:mysql://book-db-instance.cw8jcq9o5fxc.us-east-1.rds.amazonaws.com:3306/book_db
-    driverClassName: com.mysql.cj.jdbc.Driver
-    username: admin
-    password: Lalp0xddNaVMauRM6qys
+    url: jdbc-secretsmanager:mysql://host:port/port
+    driverClassName: com.amazonaws.secretsmanager.sql.AWSSecretsManagerMySQLDriver
+    username: username
+    password: username
+    validation-query: SELECT 1
 #spring.datasource.url=jdbc-secretsmanager:mysql://test/secret/
 #spring.datasource.username=test/secret/
 #spring.datasource.driver-class-name=com.amazonaws.secretsmanager.sql.AWSSecretsManagerMySQLDriver
@@ -21,3 +22,12 @@ management:
   endpoint:
     health:
       show-details: always
+aws:
+    secretsmanager:
+        name: prod/rds/mysql      
+cloud:
+  aws:
+    region:
+      static: us-east-1
+      endpoint: https://secretsmanager.us-east-1.amazonaws.com
+      cache-ttl: 3600
