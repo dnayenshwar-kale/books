@@ -15,7 +15,8 @@ import lombok.Data;
 public class Book {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	@Column(name = "id",nullable = false, unique = true ,updatable = false)
 	private Long id;
 
 	@Column(nullable = false)
