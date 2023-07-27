@@ -1,15 +1,11 @@
 spring:
-  datasource:
-    url: jdbc-secretsmanager:mysql://host:port/port
-    driverClassName: com.amazonaws.secretsmanager.sql.AWSSecretsManagerMySQLDriver
-    username: username
-    password: username
-    validation-query: SELECT 1
-#spring.datasource.url=jdbc-secretsmanager:mysql://test/secret/
-#spring.datasource.username=test/secret/
-#spring.datasource.driver-class-name=com.amazonaws.secretsmanager.sql.AWSSecretsManagerMySQLDriver
-#spring.datasource.validation-query=SELECT 1
-    
+#  config: 
+#    import: aws/secretsmanager:prod/rds/mysql
+ # datasource:
+  #  url: jdbc-secretsmanager:mysql://host:port/dbname
+ #   driver-class-name: com.amazonaws.secretsmanager.sql.AWSSecretsManagerMySQLDriver  
+ #   username: username
+ #   password: password
   jpa:
     spring.jpa.database-platform : org.hibernate.dialect.MySQL8Dialect
     h2 : 
@@ -22,12 +18,3 @@ management:
   endpoint:
     health:
       show-details: always
-aws:
-    secretsmanager:
-        name: prod/rds/mysql      
-cloud:
-  aws:
-    region:
-      static: us-east-1
-      endpoint: https://secretsmanager.us-east-1.amazonaws.com
-      cache-ttl: 3600
