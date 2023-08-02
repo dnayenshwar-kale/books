@@ -1,4 +1,8 @@
 # Read Me First
+# step by step docuemntation for demo 
+https://github.com/dnayenshwar-kale/books/blob/aws_ecs_ci_cd_deployment/Spring%20boot%20API%20deployment%20via%20pipeline%20in%20ECS%20and%20integration%20with%20api%20gateway.docx
+
+
 The following was discovered as part of building this project:
 
 * The JVM level was changed from '1.8' to '17', review the [JDK Version Range](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions#jdk-version-range) on the wiki for more details.
