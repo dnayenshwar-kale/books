@@ -1,9 +1,9 @@
 # books
 it Spring boot book api developed for Demonstrate java development and deployment in aws cloud via build project and aws pipeline
 
-https://github.com/dnayenshwar-kale/books/blob/aws_ecs_ci_cd_deployment/Spring%20boot%20API%20deployment%20via%20pipeline%20in%20ECS%20and%20integration%20with%20api%20gateway.pdf
-OR 
-https://github.com/dnayenshwar-kale/books/blob/aws_ecs_ci_cd_deployment/Spring%20boot%20API%20deployment%20via%20pipeline%20in%20ECS%20and%20integration%20with%20api%20gateway.docx 
+https://github.com/dnayenshwar-kale/books/blob/aws_ecs_ci_cd_deployment/Spring%20boot%20API%20deployment%20via%20pipeline%20in%20ECS%20and%20integration%20with%20api%20gateway.pdf  
+OR  
+https://github.com/dnayenshwar-kale/books/blob/aws_ecs_ci_cd_deployment/Spring%20boot%20API%20deployment%20via%20pipeline%20in%20ECS%20and%20integration%20with%20api%20gateway.docx  
 
 # sonar cloud  
 https://sonarcloud.io/summary/overall?id=dnayenshwar-kale_books
