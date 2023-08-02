@@ -1,5 +1,7 @@
 # Read Me First
 # step by step docuemntation for demo 
+https://github.com/dnayenshwar-kale/books/blob/aws_ecs_ci_cd_deployment/Spring%20boot%20API%20deployment%20via%20pipeline%20in%20ECS%20and%20integration%20with%20api%20gateway.pdf
+OR 
 https://github.com/dnayenshwar-kale/books/blob/aws_ecs_ci_cd_deployment/Spring%20boot%20API%20deployment%20via%20pipeline%20in%20ECS%20and%20integration%20with%20api%20gateway.docx
 
 
