@@ -1,6 +1,8 @@
 # books
 it Spring boot book api developed for Demonstrate java development and deployment in aws cloud via build project and aws pipeline
 
+https://github.com/dnayenshwar-kale/books/blob/aws_ecs_ci_cd_deployment/Spring%20boot%20API%20deployment%20via%20pipeline%20in%20ECS%20and%20integration%20with%20api%20gateway.docx
+
 # sonar cloud  
 https://sonarcloud.io/summary/overall?id=dnayenshwar-kale_books
 
@@ -37,4 +39,5 @@ http://localhost:8080/swagger-ui/index.html
 1 copy json from http://localhost:8080/v3/api-docs  
 2 create api from above swagger api  
 3  integrate request with http and point like http://localhost:8080/api/book  
-  
+
+
